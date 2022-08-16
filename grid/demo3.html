@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-gap: 20px;
+            grid-template-areas:
+                'h h h h h h h h h h h h'
+                'l l l c c c c c c r r r'
+                'f f f f f f f f f f f f';
+            margin: 0 auto;
+
+        }
+
+        .header {
+            height: 30px;
+            grid-area: h;
+            background-color: red;
+        }
+
+        .sidebar {
+            height: 300px;
+            grid-area: l;
+            background-color: green;
+        }
+
+        .content {
+            height: 300px;
+            grid-area: c;
+            background-color: yellow;
+        }
+
+        .sidebar2 {
+            height: 300px;
+            grid-area: r;
+            background-color: blue;
+        }
+
+        .footer {
+            height: 30px;
+            grid-area: f;
+            background-color: gray;
+        }
+
+        @media screen and (max-width:500px) {
+            .box {
+                grid-template-areas:
+                'h h h h h h h h h h h h'
+                'l l l l l l l l l l l l'
+                'c c c c c c c c c c c c'
+                'r r r r r r r r r r r r'
+                'f f f f f f f f f f f f';
+            }
+            .sidebar{
+                height: 30px;
+            }
+            .sidebar2{
+                height: 30px;
+            }
+        }
+
+        @media screen and (max-width:600px ) and (min-width:500px) {
+            .box {
+                grid-template-areas:
+                    'h h h h h h h h h h h h'
+                    'l l l c c c c c c c c c'
+                    'r r r r r r r r r r r r'
+                    'f f f f f f f f f f f f';
+            }
+            .sidebar2 {
+                height: 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">HEADER</div>
+        <div class="sidebar"></div>
+        <div class="content"></div>
+        <div class="sidebar2"></div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
